@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="./output.css" rel="stylesheet">
+    <script>
+      function toggleCheckbox() {
+        const toggle = document.getElementById('check');
+        toggle.classList.toggle('bg-green-400');
+        toggle.classList.toggle('bg-red-400');
+        toggle.classList.toggle('translate-x-5');
+      }
+    </script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-900 px-4">
+    <div class="bg-gradient-to-b from-blue-400 to-blue-900 p-6 sm:p-8 rounded-3xl w-full max-w-xs sm:max-w-sm shadow-lg text-center">
+        <h2 class="text-white text-lg font-semibold mb-4">Login</h2>
+        
+        <div class="text-left">
+            <label class="text-white text-sm" for="email">Email</label>
+            <input id="email" type="email" placeholder="email:" class="w-full p-2 mt-1 rounded-md bg-white text-gray-900 outline-none" />
+        </div>
+
+        <div class="text-left mt-4">
+            <label class="text-white text-sm" for="password">Senha</label>
+            <input id="password" type="password" placeholder="senha:" class="w-full p-2 mt-1 rounded-md bg-white text-gray-900 outline-none" />
+        </div>
+        
+        <div class="flex items-center mt-4">
+            <input id="remember" type="checkbox" class="hidden">
+            <label for="remember" class="w-10 h-5 flex items-center bg-gray-600 rounded-full p-1 cursor-pointer" onClick="toggleCheckbox()">
+                <div id="check" class="w-4 h-4 bg-green-400 rounded-full transition-transform transform translate-x-0"></div>
+            </label>
+            <span class="text-green-300 text-sm ml-2">Manter o login salvo neste dispositivo.</span>
+        </div>
+
+        <a href="#" class="text-sm text-blue-300 block mt-2">Recuperar senha</a>
+        
+        <a href="#" class="bg-white text-black font-semibold px-4 py-2 mt-4 rounded-lg shadow-md w-full block text-center">Entrar</a>
+    </div>
+</body>
+</html>

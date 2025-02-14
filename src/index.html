@@ -8,8 +8,8 @@
     <script>
       function toggleCheckbox() {
         const toggle = document.getElementById('check');
-        toggle.classList.toggle('bg-green-400');
         toggle.classList.toggle('bg-red-400');
+        toggle.classList.toggle('bg-green-400');
         toggle.classList.toggle('translate-x-5');
       }
     </script>
@@ -32,7 +32,7 @@
       <div class="flex items-center mt-4" onClick="toggleCheckbox()">
           <input id="remember" type="checkbox" class="hidden">
           <label for="remember" class="w-10 h-5 flex items-center bg-gray-600 rounded-full p-1 cursor-pointer" onclick="toggleCheckbox()">
-              <div id="check" class="w-4 h-4 bg-green-400 rounded-full transition-transform transform translate-x-0"></div>
+              <div id="check" class="w-4 h-4 bg-red-400 rounded-full transition-transform transform translate-x-0"></div>
           </label>
           <span class="text-green-300 text-sm ml-2">Manter o login salvo neste dispositivo.</span>
       </div>

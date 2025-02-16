@@ -1,95 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Principal</title>
+    <link href="./output.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu Principal</title>
-  <link href="./output.css" rel="stylesheet">
-  <script>
-    function toggleCheckbox() {
-      const toggle = document.getElementById('check');
-      toggle.classList.toggle('bg-green-400');
-      toggle.classList.toggle('bg-red-400');
-      toggle.classList.toggle('translate-x-5');
-    }
-  </script>
+  <body class="min-h-screen bg-gradient-to-b from-blue-400 to-blue-900 px-4">
+    
+    <nav class="bg-gradient-to-b from-blue-900 to-blue-700 p-4 flex justify-between text-white fixed top-0 left-0 w-full z-100 rounded-b-3xl">
+      <div class="flex gap-3">
+        <i data-lucide="user" class="w-6 h-6"></i>
+        <i data-lucide="settings" class="w-6 h-6"></i>
+        <i data-lucide="home" class="w-6 h-6"></i>
+      </div>
 
-  <header class="bg-gradient-to-b from-blue-400 to-blue-900 p-5 rounded-3xl shadow-md w-full fixed left-0">
-    <div>
-      <a href="#" class="text-white hover:text-blue-300">PERFIL</a>
-      <a href="./configuracoes.html" class="text-white hover:text-blue-300">CONFIG</a>
-      <a href="./menu.html" class="text-white hover:text-blue-300">HOME</a>
+      <div class="flex gap-3">
+        <span id="clock" class="text-lg font-semibold"></span>
+        <i data-lucide="bell" class="w-6 h-6"></i>
+        <i data-lucide="battery-full" class="w-6 h-6 text-green-400"></i>
+      </div>
+    </nav>
+      
+
+    <div class="flex items-center flex-grow mt-16 mb-10">
+      <input id="pesquisar" type="text" placeholder="Pesquisar:"
+        class="w-full p-2 mt-1 rounded-md bg-white text-gray-900 outline-none" />
+      <button class="cursor-pointer">
+        <i data-lucide="trash" class="text-white"></i>
+      </button>
     </div>
-  </header>
-</head><br><br><br>
 
-<body class="min-h-screen bg-gradient-to-b from-blue-400 to-blue-900 px-4">
+    <div class="flex items-center flex-grow mt-16 grid grid-cols-1 gap-4 mb-10">
+      <label class="text-white text-lg font-semibold block mb-4">Geral</label>
 
-  <div class="flex items-center flex-grow mt-16 mb-10">
-    <input id="pesquisar" type="text" placeholder="Pesquisar:"
-      class="w-full p-2 mt-1 rounded-md bg-white text-gray-900 outline-none" />
-    <button class="cursor-pointer">
-      <i data-lucide="trash" class="text-white"></i>
-    </button>
-  </div>
+      <div
+        class="bg-gradient-to-b from-blue-400 to-blue-900 p-2 rounded-3xl shadow-md w-full text-white place-self-center justify-between content-between shadow-xl rounded-xl size-50 w-3xs">
+      </div>
+    </div>
 
-  <div class="flex items-center flex-grow mt-16 grid grid-cols-1 gap-4 mb-10">
     <label class="text-white text-lg font-semibold block mb-4">Geral</label>
+    <div
+      class="items-center mt-16 grid grid-cols-3 grid-rows-2 mb-10 bg-gradient-to-b from-blue-400 to-blue-900 p-2 rounded-3xl shadow-md w-full text-white shadow-xl rounded-xl size-50 w-3xs">
+      <div class="flex justify-center">App 1</div>
+      <div class="flex justify-center">App 2</div>
+      <div class="flex justify-center">App 3</div>
+      <div class="flex justify-center">App 4</div>
+      <div class="flex justify-center">App 5</div>
+      <div class="flex justify-center">App 6</div>
+    </div>
+
+    <div class="flex items-center flex-grow mt-16 grid grid-cols-2 gap-4 mb-10">
+      <div>
+        <label class="text-white text-lg font-semibold block mb-4">Cômodos</label>
+        <div
+          class="items-center mt-16 grid grid-cols-2 grid-rows-2 mb-10 bg-gradient-to-b from-blue-400 to-blue-900 p-2 rounded-3xl shadow-md w-full text-white shadow-xl rounded-xl size-50 w-3xs">
+          <div class="flex justify-center">Cômodo 1</div>
+          <div class="flex justify-center">Cômodo 2</div>
+          <div class="flex justify-center">Cômodo 3</div>
+          <div class="flex justify-center">Cômodo 4</div>
+        </div>
+      </div>
+      <div>
+        <label class="text-white text-lg font-semibold block mb-4">Câmeras</label>
+        <div
+          class="items-center mt-16 grid grid-cols-2 grid-rows-2 mb-10 bg-gradient-to-b from-blue-400 to-blue-900 p-2 rounded-3xl shadow-md w-full text-white shadow-xl rounded-xl size-50 w-3xs">
+          <div class="flex justify-center">Câmera 1</div>
+          <div class="flex justify-center">Câmera 2</div>
+          <div class="flex justify-center">Câmera 3</div>
+          <div class="flex justify-center">Câmera 4</div>
+        </div>
+      </div>
+    </div>
+
+    <label class="text-white text-lg font-semibold block mb-4">Aplicativos</label>
 
     <div
-      class="bg-gradient-to-b from-blue-400 to-blue-900 p-2 rounded-3xl shadow-md w-full text-white place-self-center justify-between content-between shadow-xl rounded-xl size-50 w-3xs">
+      class="items-center mt-16 grid grid-cols-3 grid-rows-2 mb-10 bg-gradient-to-b from-blue-400 to-blue-900 p-2 rounded-3xl shadow-md w-full text-white shadow-xl rounded-xl size-50 w-3xs">
+
+      <div class="flex justify-center">App 1</div>
+      <div class="flex justify-center">App 2</div>
+      <div class="flex justify-center">App 3</div>
+      <div class="flex justify-center">App 4</div>
+      <div class="flex justify-center">App 5</div>
+      <div class="flex justify-center">App 6</div>
     </div>
-  </div>
 
-  <label class="text-white text-lg font-semibold block mb-4">Geral</label>
-  <div
-    class="items-center mt-16 grid grid-cols-3 grid-rows-2 mb-10 bg-gradient-to-b from-blue-400 to-blue-900 p-2 rounded-3xl shadow-md w-full text-white shadow-xl rounded-xl size-50 w-3xs">
-    <div class="flex justify-center">App 1</div>
-    <div class="flex justify-center">App 2</div>
-    <div class="flex justify-center">App 3</div>
-    <div class="flex justify-center">App 4</div>
-    <div class="flex justify-center">App 5</div>
-    <div class="flex justify-center">App 6</div>
-  </div>
+    <script>
+      function toggleCheckbox() {
+        const toggle = document.getElementById('check');
+        toggle.classList.toggle('bg-green-400');
+        toggle.classList.toggle('bg-red-400');
+        toggle.classList.toggle('translate-x-5');
+      }
 
-  <div class="flex items-center flex-grow mt-16 grid grid-cols-2 gap-4 mb-10">
-    <div>
-      <label class="text-white text-lg font-semibold block mb-4">Cômodos</label>
-      <div
-        class="items-center mt-16 grid grid-cols-2 grid-rows-2 mb-10 bg-gradient-to-b from-blue-400 to-blue-900 p-2 rounded-3xl shadow-md w-full text-white shadow-xl rounded-xl size-50 w-3xs">
-        <div class="flex justify-center">Cômodo 1</div>
-        <div class="flex justify-center">Cômodo 2</div>
-        <div class="flex justify-center">Cômodo 3</div>
-        <div class="flex justify-center">Cômodo 4</div>
-      </div>
-    </div>
-    <div>
-      <label class="text-white text-lg font-semibold block mb-4">Câmeras</label>
-      <div
-        class="items-center mt-16 grid grid-cols-2 grid-rows-2 mb-10 bg-gradient-to-b from-blue-400 to-blue-900 p-2 rounded-3xl shadow-md w-full text-white shadow-xl rounded-xl size-50 w-3xs">
-        <div class="flex justify-center">Câmera 1</div>
-        <div class="flex justify-center">Câmera 2</div>
-        <div class="flex justify-center">Câmera 3</div>
-        <div class="flex justify-center">Câmera 4</div>
-      </div>
-    </div>
-  </div>
+      function updateTime() {
+        const date = new Date();
+          document.getElementById("clock").innerText = `${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`;
+        }
+      updateTime();
+      setInterval(updateTime, 1000)
+      lucide.createIcons();
+    </script>
 
-  <label class="text-white text-lg font-semibold block mb-4">Aplicativos</label>
-
-  <div
-    class="items-center mt-16 grid grid-cols-3 grid-rows-2 mb-10 bg-gradient-to-b from-blue-400 to-blue-900 p-2 rounded-3xl shadow-md w-full text-white shadow-xl rounded-xl size-50 w-3xs">
-
-    <div class="flex justify-center">App 1</div>
-    <div class="flex justify-center">App 2</div>
-    <div class="flex justify-center">App 3</div>
-    <div class="flex justify-center">App 4</div>
-    <div class="flex justify-center">App 5</div>
-    <div class="flex justify-center">App 6</div>
-  </div>
-
-
-</body>
-
+  </body>
 </html>

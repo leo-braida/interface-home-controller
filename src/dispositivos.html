@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,46 +8,103 @@
     <link href="./output.css" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body class="grid min-h-screen bg-gradient-to-b from-blue-900 to-blue-400 px-4 relative overflow-hidden">
+
+    <nav
+        class="bg-gradient-to-b from-blue-900 to-blue-700 p-4 flex justify-between text-white fixed top-0 left-0 w-full z-100 rounded-b-3xl">
+        <div class="flex gap-3">
+
+            <i data-lucide="arrow-left" class="w-6 h-6" onclick="back()"></i>
+            <a href="#"><i data-lucide="user" class="w-6 h-6"></i></a>
+            <a href="./configuracoes.html"><i data-lucide="settings" class="w-6 h-6"></i></a>
+            <a href="./menu.html"><i data-lucide="home" class="w-6 h-6"></i></a>
+
+        </div>
+
+        <div class="flex gap-3">
+            <span id="clock" class="text-lg font-semibold"></span>
+            <i data-lucide="bell" class="w-6 h-6"></i>
+            <i data-lucide="battery-full" class="w-6 h-6 text-green-400"></i>
+        </div>
+    </nav>
+
     <div class="content-evenly justify-self-center w-80/100 grid grid-cols-3">
-    <label class="col-span-3 place-self-center text-white text-lg font-semibold ">Dispositivos</label>
-    <div class="place-self-center justify-between content-between grid grid-cols-3 grid-rows-3 shadow-xl rounded-xl size-38 w-3xs bg-gradient-to-b from-blue-900 to-blue-400">
-        <label class="col-start-1 row-start-1 text-white -mt-7">Lâmpada 1</label>
-        <div class="p-2 col-start-1 row-start-1"><i data-lucide="star" class="text-white"></i></div>
-        <div class="col-start-2 row-start-2"><i data-lucide="lightbulb" class="size-20 text-white place-self-center -mt-3"></i></div>
-        <div class="p-2 col-start-3 row-start-3 grid"><i data-lucide="trash" class="text-white place-self-end"></i></div>
-    </div>
-    <div class="place-self-center justify-between content-between grid grid-cols-3 grid-rows-3 shadow-xl rounded-xl size-38 w-3xs bg-gradient-to-b from-blue-900 to-blue-400">
-        <label class="col-start-1 row-start-1 text-white -mt-7">Alarme</label>
-        <div class="p-2 col-start-1 row-start-1"><i data-lucide="star" class="text-white"></i></div>
-        <div class="col-start-2 row-start-2"><i data-lucide="alarm-clock" class="size-20 text-white place-self-center -mt-3"></i></div>
-        <div class="p-2 col-start-3 row-start-3 grid"><i data-lucide="trash" class="text-white place-self-end"></i></div>
-    </div>
-    <div class="place-self-center justify-between content-between grid grid-cols-3 grid-rows-3 shadow-xl rounded-xl size-38 w-3xs bg-gradient-to-b from-blue-900 to-blue-400">
-        <label class="col-start-1 row-start-1 text-white -mt-7">Televisão</label>
-        <div class="p-2 col-start-1 row-start-1"><i data-lucide="star" class="text-white"></i></div>
-        <div class="col-start-2 row-start-2"><i data-lucide="tv" class="size-20 text-white place-self-center -mt-3"></i></div>
-        <div class="p-2 col-start-3 row-start-3 grid"><i data-lucide="trash" class="text-white place-self-end"></i></div>
-    </div>
-    <div class="place-self-center justify-between content-between grid grid-cols-3 grid-rows-3 shadow-xl rounded-xl size-38 w-3xs bg-gradient-to-b from-blue-900 to-blue-400">
-        <label class="col-start-1 row-start-1 text-white -mt-7 absolute">Ar Condicionado</label>
-        <div class="p-2 col-start-1 row-start-1"><i data-lucide="star" class="text-white"></i></div>
-        <div class="col-start-2 row-start-2"><i data-lucide="air-vent" class="size-20 text-white place-self-center -mt-3"></i></div>
-        <div class="p-2 col-start-3 row-start-3 grid"><i data-lucide="trash" class="text-white place-self-end"></i></div>
-    </div>
-    <div class="place-self-center justify-between content-between grid grid-cols-3 grid-rows-3 shadow-xl rounded-xl size-38 w-3xs bg-gradient-to-b from-blue-900 to-blue-400">
-        <label class="col-start-1 row-start-1 text-white -mt-7 absolute">Lâmpada RGB</label>
-        <div class="p-2 col-start-1 row-start-1"><i data-lucide="star" class="text-white"></i></div>
-        <div class="col-start-2 row-start-2"><i data-lucide="lightbulb" class="size-20 text-white place-self-center -mt-3"></i></div>
-        <div class="p-2 col-start-3 row-start-3 grid"><i data-lucide="trash" class="text-white place-self-end"></i></div>
-    </div>
-    <div class="size-20 justify-items-center place-self-center shadow-xl rounded-full bg-gradient-to-b from-blue-900 to-blue-400">
-        <i data-lucide="plus" class="size-10 text-white place-self-center mt-5 mb-5"></i>
-        <label for="adicionar" class="text-white">Adicionar</label>
-    </div>
+        <label class="col-span-3 place-self-center text-white text-lg font-semibold ">Dispositivos</label>
+        <div
+            class="place-self-center justify-between content-between grid grid-cols-3 grid-rows-3 shadow-xl rounded-xl size-38 w-3xs bg-gradient-to-b from-blue-900 to-blue-400">
+            <label class="col-start-1 row-start-1 text-white -mt-7">Lâmpada 1</label>
+            <div class="p-2 col-start-1 row-start-1"><i data-lucide="star" class="text-white"></i></div>
+            <div class="col-start-2 row-start-2"><i data-lucide="lightbulb"
+                    class="size-20 text-white place-self-center -mt-3"></i></div>
+            <div class="p-2 col-start-3 row-start-3 grid"><i data-lucide="trash" class="text-white place-self-end"></i>
+            </div>
+        </div>
+        <div
+            class="place-self-center justify-between content-between grid grid-cols-3 grid-rows-3 shadow-xl rounded-xl size-38 w-3xs bg-gradient-to-b from-blue-900 to-blue-400">
+            <label class="col-start-1 row-start-1 text-white -mt-7">Alarme</label>
+            <div class="p-2 col-start-1 row-start-1"><i data-lucide="star" class="text-white"></i></div>
+            <div class="col-start-2 row-start-2"><i data-lucide="alarm-clock"
+                    class="size-20 text-white place-self-center -mt-3"></i></div>
+            <div class="p-2 col-start-3 row-start-3 grid"><i data-lucide="trash" class="text-white place-self-end"></i>
+            </div>
+        </div>
+        <div
+            class="place-self-center justify-between content-between grid grid-cols-3 grid-rows-3 shadow-xl rounded-xl size-38 w-3xs bg-gradient-to-b from-blue-900 to-blue-400">
+            <label class="col-start-1 row-start-1 text-white -mt-7">Televisão</label>
+            <div class="p-2 col-start-1 row-start-1"><i data-lucide="star" class="text-white"></i></div>
+            <div class="col-start-2 row-start-2"><i data-lucide="tv"
+                    class="size-20 text-white place-self-center -mt-3"></i></div>
+            <div class="p-2 col-start-3 row-start-3 grid"><i data-lucide="trash" class="text-white place-self-end"></i>
+            </div>
+        </div>
+        <div
+            class="place-self-center justify-between content-between grid grid-cols-3 grid-rows-3 shadow-xl rounded-xl size-38 w-3xs bg-gradient-to-b from-blue-900 to-blue-400">
+            <label class="col-start-1 row-start-1 text-white -mt-7 absolute">Ar Condicionado</label>
+            <div class="p-2 col-start-1 row-start-1"><i data-lucide="star" class="text-white"></i></div>
+            <div class="col-start-2 row-start-2"><i data-lucide="air-vent"
+                    class="size-20 text-white place-self-center -mt-3"></i></div>
+            <div class="p-2 col-start-3 row-start-3 grid"><i data-lucide="trash" class="text-white place-self-end"></i>
+            </div>
+        </div>
+        <div
+            class="place-self-center justify-between content-between grid grid-cols-3 grid-rows-3 shadow-xl rounded-xl size-38 w-3xs bg-gradient-to-b from-blue-900 to-blue-400">
+            <label class="col-start-1 row-start-1 text-white -mt-7 absolute">Lâmpada RGB</label>
+            <div class="p-2 col-start-1 row-start-1"><i data-lucide="star" class="text-white"></i></div>
+            <div class="col-start-2 row-start-2"><i data-lucide="lightbulb"
+                    class="size-20 text-white place-self-center -mt-3"></i></div>
+            <div class="p-2 col-start-3 row-start-3 grid"><i data-lucide="trash" class="text-white place-self-end"></i>
+            </div>
+        </div>
+        <div
+            class="size-20 justify-items-center place-self-center shadow-xl rounded-full bg-gradient-to-b from-blue-900 to-blue-400">
+            <i data-lucide="plus" class="size-10 text-white place-self-center mt-5 mb-5"></i>
+            <label for="adicionar" class="text-white">Adicionar</label>
+        </div>
     </div>
     <script>
+        function toggleCheckbox(element) {
+            const toggle = element.querySelector('.toggle');
+            if (toggle.classList.contains('bg-red-400')) {
+                toggle.classList.replace('bg-red-400', 'bg-green-400');
+            } else {
+                toggle.classList.replace('bg-green-400', 'bg-red-400');
+            }
+            toggle.classList.toggle('translate-x-5');
+        }
+
+        function updateTime() {
+            const date = new Date();
+            document.getElementById("clock").innerText = `${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`;
+        }
+        updateTime();
+        setInterval(updateTime, 1000)
         lucide.createIcons();
+
+        function back() {
+            history.back();
+        }
     </script>
 </body>
+
 </html>

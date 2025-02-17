@@ -9,47 +9,91 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-<body class="min-h-screen bg-gradient-to-b from-blue-900 to-blue-400 px-4">
+  <body class="min-h-screen bg-gradient-to-b from-blue-900 to-blue-400 px-4">
 
-  <nav
-    class="bg-gradient-to-b from-blue-900 to-blue-700 p-4 flex justify-between text-white fixed top-0 left-0 w-full z-100 rounded-b-3xl">
-    <div class="flex gap-3">
+    <nav class="bg-gradient-to-b from-blue-900 to-blue-700 p-4 flex justify-between text-white fixed top-0 left-0 w-full z-100 rounded-b-3xl">
+      <div class="flex gap-3">
 
-      <i data-lucide="arrow-left" class="w-6 h-6" onclick="back()"></i>
-      <a href="#"><i data-lucide="user" class="w-6 h-6"></i></a>
-      <a href="./configuracoes.html"><i data-lucide="settings" class="w-6 h-6"></i></a>
-      <a href="./menu.html"><i data-lucide="home" class="w-6 h-6"></i></a>
+        <i data-lucide="arrow-left" class="w-6 h-6" onclick="back()"></i>
+        <a href="#"><i data-lucide="user" class="w-6 h-6"></i></a>
+        <a href="./configuracoes.html"><i data-lucide="settings" class="w-6 h-6"></i></a>
+        <a href="./menu.html"><i data-lucide="home" class="w-6 h-6"></i></a>
 
+      </div>
+
+      <div class="flex gap-3">
+        <span id="clock" class="text-lg font-semibold"></span>
+        <i data-lucide="bell" class="w-6 h-6"></i>
+        <i data-lucide="battery-full" class="w-6 h-6 text-green-400"></i>
+      </div>
+    </nav>
+
+
+    <div class="flex items-center flex-grow mt-16 mb-10">
+      <input id="pesquisar" type="text" placeholder="Pesquisar:" class="w-full p-2 mt-1 bg-white text-grey outline-none rounded-3xl" />
+      <button class="cursor-pointer">
+        <i data-lucide="mic" class="text-white"></i>
+      </button>
     </div>
 
-    <div class="flex gap-3">
-      <span id="clock" class="text-lg font-semibold"></span>
-      <i data-lucide="bell" class="w-6 h-6"></i>
-      <i data-lucide="battery-full" class="w-6 h-6 text-green-400"></i>
-    </div>
-  </nav>
+    <label class="text-white text-lg font-semibold block mb-4">Menu principal</label>
+    <div class="bg-blue-900 p-6 rounded-3xl shadow-lg text-white w-full relative flex flex-row items-start gap-4">
+        <div class="flex flex-col w-1/2 gap-4 h-full">
+          <div class="bg-gradient-to-b from-blue-500 to-blue-900 p-6 rounded-2xl shadow-lg flex-1 h-full flex flex-col justify-between">
+            <div class="flex justify-between items-center mb-4">
+              <i data-lucide="air-vent" class="w-6 h-6"></i>
+              <div class="w-10 h-5 bg-gray-600 rounded-full flex items-center p-1 cursor-pointer" onclick="toggleCheckbox(this)">
+                <div class="w-4 h-4 bg-green-400 rounded-full transition-transform transform translate-x-5"></div>
+              </div>
+            </div>
+            <div class="flex justify-between items-center text-2xl">
+              <button class="bg-gradient-to-b from-blue-800 to-blue-600 p-2 rounded-full"><i data-lucide="minus"></i></button>
+              <span>26° C</span>
+              <button class="bg-gradient-to-b from-blue-800 to-blue-600 p-2 rounded-full"><i data-lucide="plus"></i></button>
+            </div>
+          </div>
 
+          <div class="bg-gradient-to-b from-blue-500 to-blue-900 p-4 rounded-2xl shadow-lg w-full flex justify-between items-center">
+            <i data-lucide="lightbulb" class="w-6 h-6"></i>
+            <div class="w-10 h-5 bg-gray-600 rounded-full flex items-center p-1 cursor-pointer" onclick="toggleCheckbox(this)">
+              <div class="w-4 h-4 bg-green-400 rounded-full transition-transform transform translate-x-5"></div>
+            </div>
+            <i data-lucide="chevron-right" class="w-6 h-6"></i>
+          </div>
+        </div>
 
-  <div class="flex items-center flex-grow mt-16 mb-10">
-    <input id="pesquisar" type="text" placeholder="Pesquisar:"
-      class="w-full p-2 mt-1 bg-white text-grey outline-none rounded-3xl" />
-    <button class="cursor-pointer">
-      <i data-lucide="mic" class="text-white"></i>
-    </button>
-  </div>
-
-  <label class="text-white text-lg font-semibold block mb-4">Menu principal</label>
-  <div class="flex items-center flex-grow grid grid-cols-1 gap-4 mb-10">
-    <div
-      class="bg-gradient-to-b from-blue-400 to-blue-900 p-2 rounded-3xl shadow-md w-full text-white place-self-center justify-between content-between shadow-xl size-50 w-3xs">
-    </div>
-  </div>
-
+        <div class="w-1/2">
+          <div class="bg-gradient-to-b from-blue-500 to-blue-900 p-4 rounded-2xl shadow-lg w-full flex flex-col items-center">
+            <h3 class="text-lg font-semibold mb-4 text-center">Dispositivos</h3>
+            <div class="grid grid-cols-2 gap-4 w-full">
+              <div class="bg-blue-800 p-4 rounded-xl flex flex-col items-center">
+                <span class="mt-2">Lâmpadas</span>
+                <i data-lucide="lightbulb" class="w-8 h-8"></i>
+              </div>
+              <div class="bg-blue-800 p-4 rounded-xl flex flex-col items-center">
+                <span class="mt-2">Alarme</span>
+                <i data-lucide="bell" class="w-8 h-8"></i>
+              </div>
+              
+              <div class="bg-blue-800 p-4 rounded-xl flex flex-col items-center">
+                <span class="mt-2">Ar-condicionado</span>
+                <i data-lucide="air-vent"></i>
+              </div>
+              <div class="bg-blue-800 p-4 rounded-xl flex flex-col items-center">
+                <span class="mt-2">Televisão</span>
+                <i data-lucide="tv" class="w-8 h-8"></i>
+              </div>
+            </div>
+          </div>
+          <div class="absolute right-4 top-1/2 transform -translate-y-1/2">
+            <i data-lucide="chevron-right" class="w-8 h-8"></i>
+          </div>
+        </div>
+      </div>
   <label class="text-white text-lg font-semibold block mb-4">Geral</label>
   <div
     class="grid grid-cols-3 gap-4 bg-gradient-to-b from-blue-400 to-blue-900 p-4 rounded-3xl text-white shadow-xl w-full mb-10">
     <div>
-      <p class="text-lg">calendário</p>
       <div
         class="flex justify-center items-center bg-gradient-to-b from-blue-900 to-blue-400 rounded-3xl shadow-xl">
         <i data-lucide="calendar" class="size-10"></i>
@@ -58,21 +102,19 @@
     </div>
 
     <div>
-      <p class="text-lg">Relógio</p>
       <div
         class="flex justify-center items-center bg-gradient-to-b from-blue-900 to-blue-400 rounded-3xl shadow-xl">
         <i data-lucide="clock-4" class="size-10"></i>
       </div>
-      <p class="text-center">09:30 pm</p>
+      <p class="text-center">09:30</p>
     </div>
 
     <div>
-      <p class="text-lg">Termometro</p>
       <div
         class="flex justify-center items-center bg-gradient-to-b from-blue-900 to-blue-400 rounded-3xl shadow-xl">
         <i data-lucide="thermometer" class="size-10"></i>
       </div>
-      <p class="text-center">37o C</p>
+      <p class="text-center">37º C</p>
     </div>
 
     <div>
@@ -85,7 +127,7 @@
     </div>
 
     <div>
-      <p class="text-lg">Amanha</p>
+      <p class="text-lg">Amanhã</p>
       <div
         class="flex justify-center items-center bg-gradient-to-b from-blue-900 to-blue-400 rounded-3xl shadow-xl">
         <i data-lucide="cloud-sun-rain" class="size-10"></i>
@@ -94,7 +136,7 @@
     </div>
 
     <div>
-      <p class="text-lg">Sabado</p>
+      <p class="text-lg">Sábado</p>
       <div
         class="flex justify-center items-center bg-gradient-to-b from-blue-900 to-blue-400 rounded-3xl shadow-xl">
         <i data-lucide="cloud-rain-wind" class="size-10"></i>

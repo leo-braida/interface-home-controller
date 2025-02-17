@@ -11,9 +11,12 @@
       
     <nav class="bg-gradient-to-b from-blue-900 to-blue-700 p-4 flex justify-between text-white fixed top-0 left-0 w-full z-100 rounded-b-3xl">
       <div class="flex gap-3">
-        <i data-lucide="user" class="w-6 h-6"></i>
-        <i data-lucide="settings" class="w-6 h-6"></i>
-        <i data-lucide="home" class="w-6 h-6"></i>
+        
+        <i data-lucide="arrow-left" class="w-6 h-6" onclick="back()"></i>
+        <a href="#"><i data-lucide="user" class="w-6 h-6"></i></a>
+        <a href="./configuracoes.html"><i data-lucide="settings" class="w-6 h-6"></i></a>
+        <a href="./menu.html"><i data-lucide="home" class="w-6 h-6"></i></a>
+        
       </div>
 
       <div class="flex gap-3">
@@ -106,6 +109,10 @@
       updateTime();
       setInterval(updateTime, 1000)
       lucide.createIcons();
+
+      function back(){
+        history.back();
+      }
     </script>
 </body>
 </html>

@@ -1069,6 +1069,9 @@
   .decoration-white {
     text-decoration-color: var(--color-white);
   }
+  .opacity-1 {
+    opacity: 1%;
+  }
   .shadow-md {
     --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -1089,6 +1092,65 @@
   .outline-none {
     --tw-outline-style: none;
     outline-style: none;
+  }
+  .hover\:text-black {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-black);
+      }
+    }
+  }
+  .hover\:text-neutral-500 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-neutral-500);
+      }
+    }
+  }
+  .hover\:text-white {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-white);
+      }
+    }
+  }
+  .hover\:opacity-1 {
+    &:hover {
+      @media (hover: hover) {
+        opacity: 1%;
+      }
+    }
+  }
+  .hover\:opacity-20 {
+    &:hover {
+      @media (hover: hover) {
+        opacity: 20%;
+      }
+    }
+  }
+  .hover\:outline-black {
+    &:hover {
+      @media (hover: hover) {
+        outline-color: var(--color-black);
+      }
+    }
+  }
+  .hover\:outline-neutral-500 {
+    &:hover {
+      @media (hover: hover) {
+        outline-color: var(--color-neutral-500);
+      }
+    }
+  }
+  .active\:opacity-20 {
+    &:active {
+      opacity: 20%;
+    }
+  }
+  .active\:opacity-50 {
+    &:active {
+      opacity: 50%;
+    }
   }
   .sm\:max-w-sm {
     @media (width >= 40rem) {

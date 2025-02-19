@@ -1,121 +1,141 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configurações</title>
-    <link href="./output.css" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-  </head>
-  <body class="flex items-start justify-center min-h-screen bg-gradient-to-b from-blue-500 to-blue-700 px-4 relative overflow-hidden mt-20">
-    <!-- SOBRE A TELA DE CONFIGURAÇÕES:
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configurações</title>
+  <link href="./output.css" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body
+  class="flex items-start justify-center min-h-screen bg-gradient-to-b from-blue-500 to-blue-700 px-4 relative overflow-hidden mt-20">
+  <!-- SOBRE A TELA DE CONFIGURAÇÕES:
           Nessa tela, o objetivo era deixar ela simples mas com o usuário podendo alterar todas as configurações do aplicativo.
           Por isso, a tela foi dividida em categorias.
-    -->  
-    <nav class="bg-gradient-to-b from-blue-900 to-blue-700 p-4 flex justify-between text-white fixed top-0 left-0 w-full z-100 rounded-b-3xl">
-      <div class="flex gap-3">
-        
-        <i data-lucide="arrow-left" class="w-6 h-6" onclick="back()"></i>
-        <a href="#"><i data-lucide="user" class="w-6 h-6"></i></a>
-        <a href="./configuracoes.html"><i data-lucide="settings" class="w-6 h-6"></i></a>
-        <a href="./menu.html"><i data-lucide="home" class="w-6 h-6"></i></a>
-        
-      </div>
+    -->
+  <nav
+    class="bg-gradient-to-b from-blue-900 to-blue-700 p-4 flex justify-between text-white fixed top-0 left-0 w-full z-100 rounded-b-3xl">
+    <div class="flex gap-3">
 
-      <div class="flex gap-3">
-        <span id="clock" class="text-lg font-semibold"></span>
-        <i data-lucide="bell" class="w-6 h-6"></i>
-        <i data-lucide="battery-full" class="w-6 h-6 text-green-400"></i>
-      </div>
-    </nav>
+      <i data-lucide="arrow-left" class="w-6 h-6" onclick="back()"></i>
+      <a href="#"><i data-lucide="user" class="w-6 h-6"></i></a>
+      <a href="./configuracoes.html"><i data-lucide="settings" class="w-6 h-6"></i></a>
+      <a href="./menu.html"><i data-lucide="home" class="w-6 h-6"></i></a>
+
+    </div>
+
+    <div class="flex gap-3">
+      <span id="clock" class="text-lg font-semibold"></span>
+      <i data-lucide="bell" class="w-6 h-6"></i>
+      <i data-lucide="battery-full" class="w-6 h-6 text-green-400"></i>
+    </div>
+  </nav>
 
 
-    <div class="p-6 sm:p-8 w-full max-w-xs sm:max-w-sm text-center relative z-10">
-      <h2 class="text-white text-lg font-semibold mb-4">Configurações</h2>
-        
-      <div class="text-left">
-        <h3 class="text-white text-sm font-semibold border-b border-white pb-1">Acessibilidade</h3>
-        <div class="mt-2 bg-blue-800 p-2 rounded-lg flex justify-between items-center cursor-pointer" onclick="toggleCheckbox(this)">
-          <span class="text-white">Modo Narrador</span>
-          <div class="switch w-12 h-6 flex items-center bg-blue-700 rounded-full p-1 relative border-2 border-blue-900">
-            <div class="toggle w-5 h-5 bg-red-400 border-2 border-blue-900 rounded-full transition-transform transform absolute left-1"></div>
-          </div>
-        </div>
-        <div class="mt-2 bg-blue-800 p-2 rounded-lg flex justify-between items-center cursor-pointer" onclick="toggleCheckbox(this)">
-          <span class="text-white">Modo Daltonismo</span>
-          <div class="switch w-12 h-6 flex items-center bg-blue-700 rounded-full p-1 relative border-2 border-blue-900">
-            <div class="toggle w-5 h-5 bg-red-400 border-2 border-blue-900 rounded-full transition-transform transform absolute left-1"></div>
+  <div class="p-6 sm:p-8 w-full max-w-xs sm:max-w-sm text-center relative z-10">
+    <h2 class="text-white text-lg font-semibold mb-4">Configurações</h2>
+
+    <div class="text-left">
+      <h3 class="text-white text-sm font-semibold border-b border-white pb-1">Acessibilidade</h3>
+      <div class="mt-2 bg-blue-800 p-2 rounded-lg flex justify-between items-center cursor-pointer"
+        onclick="toggleCheckbox(this)">
+        <span class="text-white">Modo Narrador</span>
+        <div class="switch w-12 h-6 flex items-center bg-blue-700 rounded-full p-1 relative border-2 border-blue-900">
+          <div
+            class="toggle w-5 h-5 bg-red-400 border-2 border-blue-900 rounded-full transition-transform transform absolute left-1">
           </div>
         </div>
       </div>
-
-      <div class="text-left mt-4">
-        <h3 class="text-white text-sm font-semibold border-b border-white pb-1">Permissões</h3>
-        <div class="mt-2 bg-blue-800 p-2 rounded-lg flex justify-between items-center cursor-pointer" onclick="toggleCheckbox(this)">
-          <span class="text-white">Câmera</span>
-          <div class="switch w-12 h-6 flex items-center bg-blue-700 rounded-full p-1 relative border-2 border-blue-900">
-            <div class="toggle w-5 h-5 bg-red-400 border-2 border-blue-900 rounded-full transition-transform transform absolute left-1"></div>
+      <div class="mt-2 bg-blue-800 p-2 rounded-lg flex justify-between items-center cursor-pointer"
+        onclick="toggleCheckbox(this)">
+        <span class="text-white">Modo Daltonismo</span>
+        <div class="switch w-12 h-6 flex items-center bg-blue-700 rounded-full p-1 relative border-2 border-blue-900">
+          <div
+            class="toggle w-5 h-5 bg-red-400 border-2 border-blue-900 rounded-full transition-transform transform absolute left-1">
           </div>
-        </div>
-        <div class="mt-2 bg-blue-800 p-2 rounded-lg flex justify-between items-center cursor-pointer" onclick="toggleCheckbox(this)">
-          <span class="text-white">Microfone</span>
-          <div class="switch w-12 h-6 flex items-center bg-blue-700 rounded-full p-1 relative border-2 border-blue-900">
-            <div class="toggle w-5 h-5 bg-red-400 border-2 border-blue-900 rounded-full transition-transform transform absolute left-1"></div>
-          </div>
-        </div>
-        <div class="mt-2 bg-blue-800 p-2 rounded-lg flex justify-between items-center cursor-pointer" onclick="toggleCheckbox(this)">
-          <span class="text-white">Contatos</span>
-          <div class="switch w-12 h-6 flex items-center bg-blue-700 rounded-full p-1 relative border-2 border-blue-900">
-            <div class="toggle w-5 h-5 bg-red-400 border-2 border-blue-900 rounded-full transition-transform transform absolute left-1"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="text-left mt-4">
-        <h3 class="text-white text-sm font-semibold border-b border-white pb-1">Dispositivos Conectados</h3>
-        <div class="mt-2 bg-blue-800 p-2 rounded-lg flex justify-between items-center">
-          <span class="text-white">Windows Phone do Léo</span>
-          <button class="cursor-pointer">
-            <i data-lucide="trash" class="text-white"></i>
-          </button>
-        </div>
-        <div class="mt-2 bg-blue-800 p-2 rounded-lg flex justify-between items-center">
-          <span class="text-white">iPhone 4 do Mateus</span>
-          <button class="cursor-pointer">
-            <i data-lucide="trash" class="text-white"></i>
-          </button>
-        </div>
-        <div class="mt-2 bg-blue-800 p-2 rounded-lg flex justify-between items-center">
-          <span class="text-white">Galaxy S4 do Lorran</span>
-          <button class="cursor-pointer">
-            <i data-lucide="trash" class="text-white"></i>
-          </button>
         </div>
       </div>
     </div>
 
-    <script>
-      function toggleCheckbox(element) {
-        const toggle = element.querySelector('.toggle');
-          if (toggle.classList.contains('bg-red-400')) {
-            toggle.classList.replace('bg-red-400', 'bg-green-400');
-          } else {
-            toggle.classList.replace('bg-green-400', 'bg-red-400');
-          }
-          toggle.classList.toggle('translate-x-5');
-      }
-      
-      function updateTime() {
-        const date = new Date();
-          document.getElementById("clock").innerText = `${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`;
-        }
-      updateTime();
-      setInterval(updateTime, 1000)
-      lucide.createIcons();
+    <div class="text-left mt-4">
+      <h3 class="text-white text-sm font-semibold border-b border-white pb-1">Permissões</h3>
+      <div class="mt-2 bg-blue-800 p-2 rounded-lg flex justify-between items-center cursor-pointer"
+        onclick="toggleCheckbox(this)">
+        <span class="text-white">Câmera</span>
+        <div class="switch w-12 h-6 flex items-center bg-blue-700 rounded-full p-1 relative border-2 border-blue-900">
+          <div
+            class="toggle w-5 h-5 bg-red-400 border-2 border-blue-900 rounded-full transition-transform transform absolute left-1">
+          </div>
+        </div>
+      </div>
+      <div class="mt-2 bg-blue-800 p-2 rounded-lg flex justify-between items-center cursor-pointer"
+        onclick="toggleCheckbox(this)">
+        <span class="text-white">Microfone</span>
+        <div class="switch w-12 h-6 flex items-center bg-blue-700 rounded-full p-1 relative border-2 border-blue-900">
+          <div
+            class="toggle w-5 h-5 bg-red-400 border-2 border-blue-900 rounded-full transition-transform transform absolute left-1">
+          </div>
+        </div>
+      </div>
+      <div class="mt-2 bg-blue-800 p-2 rounded-lg flex justify-between items-center cursor-pointer"
+        onclick="toggleCheckbox(this)">
+        <span class="text-white">Contatos</span>
+        <div class="switch w-12 h-6 flex items-center bg-blue-700 rounded-full p-1 relative border-2 border-blue-900">
+          <div
+            class="toggle w-5 h-5 bg-red-400 border-2 border-blue-900 rounded-full transition-transform transform absolute left-1">
+          </div>
+        </div>
+      </div>
+    </div>
 
-      function back(){
-        history.back();
+    <div class="text-left mt-4">
+      <h3 class="text-white text-sm font-semibold border-b border-white pb-1">Dispositivos Conectados</h3>
+      <div class="mt-2 bg-blue-800 p-2 rounded-lg flex justify-between items-center">
+        <span class="text-white">Windows Phone do Léo</span>
+        <button class="cursor-pointer">
+          <i data-lucide="trash" class="text-white"></i>
+        </button>
+      </div>
+      <div class="mt-2 bg-blue-800 p-2 rounded-lg flex justify-between items-center">
+        <span class="text-white">iPhone 4 do Mateus</span>
+        <button class="cursor-pointer">
+          <i data-lucide="trash" class="text-white"></i>
+        </button>
+      </div>
+      <div class="mt-2 bg-blue-800 p-2 rounded-lg flex justify-between items-center">
+        <span class="text-white">Galaxy S4 do Lorran</span>
+        <button class="cursor-pointer">
+          <i data-lucide="trash" class="text-white"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleCheckbox(element) {
+      const toggle = element.querySelector('.toggle');
+      if (toggle.classList.contains('bg-red-400')) {
+        toggle.classList.replace('bg-red-400', 'bg-green-400');
+      } else {
+        toggle.classList.replace('bg-green-400', 'bg-red-400');
       }
-    </script>
+      toggle.classList.toggle('translate-x-5');
+    }
+
+    function updateTime() {
+      const date = new Date();
+      document.getElementById("clock").innerText = `${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`;
+    }
+    updateTime();
+    setInterval(updateTime, 1000)
+    lucide.createIcons();
+
+    function back() {
+      history.back();
+    }
+  </script>
 </body>
+
 </html>

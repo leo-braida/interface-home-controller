@@ -1,76 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link href="./output.css" rel="stylesheet">
-    <script>
-      function toggleCheckbox() {
-        const toggle = document.getElementById('check');
-        toggle.classList.toggle('bg-red-400');
-        toggle.classList.toggle('bg-green-400');
-        toggle.classList.toggle('translate-x-5');
-      }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link href="./output.css" rel="stylesheet">
+  <script>
+    function toggleCheckbox() {
+      const toggle = document.getElementById('check');
+      toggle.classList.toggle('bg-red-400');
+      toggle.classList.toggle('bg-green-400');
+      toggle.classList.toggle('translate-x-4');
+    }
+  </script>
 </head>
 
-  <body class="flex mt-30 justify-center min-h-screen bg-gradient-to-b from-blue-900 to-blue-400 px-4 relative overflow-hidden">
-    <!-- SOBRE O SISTEMA:
-          
-        Geral: 
-          Foi dado preferência para o mobile, principalmente tendo em vista a natureza do aplicativo, controle de casa. Dessa forma, independente de onde você estiver, pode ter controle da sua casa, sem a necessidade de acesso a um computador.
-          A cor predominante é o azul, que, de acordo com a psicologia das cores de Neil Patel, transmite segurança, tranquilidade e paz, justamente o que é buscado quando se trata do seu lar.
-          O azul é complementado com o branco, que também da a sensação de segurança, além de ser um bom contraste com os tons mais escuros de azul que foram amplamente usados no aplicativo.
-          Ademais, o aplicativo como um todo possui um design minimalista, embasado na Heurística de Nielsen, para ter uma compreensão mais fácil.
-          No sistema também foi utilizado JavaScript para a troca de estilo, horário (no relógio), e também para o Lucide, uma biblioteca para ícones (dessa forma, não foi preciso importar imagens para cada ícone), fora isso, foi usado também para navegação no sistema.
-          Após o login, todas as telas possuem uma navbar para que o usuário possa conseguir navegar no sistema, sem ficar preso em uma tela, podendo voltar para a tela anterior, ir para o perfil do usuário (não implementado), para o menu principal, para as configurações, além de ver a hora, notificações (não implementado) e a bateria do dispositivo, sendo baseada na Heurística de Nielsen sobre visibilidade do status do sistema.
+<body
+  class="flex mt-30 justify-center min-h-screen bg-gradient-to-b from-blue-900 to-blue-400 px-4 relative overflow-hidden">
+  <!-- Sobre o sistema em geral:
+    É um sistema para o controle de casa inteligente. Podendo controlar diversos dispositivos, como ar-condicionado, lâmpadas, televisões e etc.
+        
+    Geral: 
+      Foi dado preferência para o mobile, principalmente tendo em vista a natureza do aplicativo, controle de casa. Dessa forma, independente de onde você estiver, pode ter controle da sua casa, sem a necessidade de acesso a um computador.
+      A cor predominante é o azul, que, de acordo com a psicologia das cores de Neil Patel, transmite segurança, tranquilidade e paz, justamente o que é buscado quando se trata do seu lar.
+      O azul é complementado com o branco, que também da a sensação de segurança, além de ser um bom contraste com os tons mais escuros de azul que foram amplamente usados no aplicativo.
+      Ademais, o aplicativo como um todo possui um design minimalista, embasado na Heurística de Nielsen, para ter uma compreensão mais fácil.
+      No sistema também foi utilizado JavaScript para a troca de estilo, horário (no relógio), e também para o Lucide, uma biblioteca para ícones (dessa forma, não foi preciso importar imagens para cada ícone), fora isso, foi usado também para navegação no sistema.
+      Após o login, todas as telas possuem uma navbar para que o usuário possa conseguir navegar no sistema, sem ficar preso em uma tela, podendo voltar para a tela anterior, ir para o perfil do usuário (não implementado), para o menu principal, para as configurações, além de ver a hora, notificações (não implementado) e a bateria do dispositivo, sendo baseada na Heurística de Nielsen sobre visibilidade do status do sistema.
 
-        Sobre a ordem de uso:
+    Sobre a ordem de uso:
           
-          Se o usuário não tiver uma conta:
-            Entra na tela de login (essa tela)
-            Clica em criar conta
-            Cria sua conta
-            Vai para a tela de login, onde prossegue como quem tem conta.
+      Se o usuário não tiver uma conta:
+        Entra na tela de login (essa tela)
+        Clica em criar conta
+        Cria sua conta
+        Vai para a tela de login, onde prossegue como quem tem conta.
           
-          Se o usuário tiver uma conta:
-            Entra na tela de login e insere suas credenciais (podendo marcar a opção de manter login, para não ter que logar novamente nas próximas vezes que acessar o app)
-            Vai para o menu principal, onde pode acessar as outras funcionalidades do sistema, como configurações, contas e os dispositivos da sua casa.
+        Se o usuário tiver uma conta:
+          Entra na tela de login e insere suas credenciais (podendo marcar a opção de manter login, para não ter que logar novamente nas próximas vezes que acessar o app)
+          Vai para o menu principal, onde pode acessar as outras funcionalidades do sistema, como configurações, contas e os dispositivos da sua casa.
             
-        SOBRE A TELA DE LOGIN:
-          Essa tela foi baseada fortemente na Heurística de Nielsen, principalmente o que dita sobre consciência e padronização, por ser uma tela de login padrão, sendo familiar para grande parte dos usuários e diminuindo a dificuldade para o uso do aplicativo.
+      Sobre a tela de login:
+        Essa tela foi baseada fortemente na Heurística de Nielsen, principalmente o que dita sobre consciência e padronização, por ser uma tela de login padrão, sendo familiar para grande parte dos usuários e diminuindo a dificuldade para o uso do aplicativo.
     -->
 
-    <div class="p-6 sm:p-8 w-full max-w-xs sm:max-w-sm text-center">
-      <h2 class="text-white text-lg font-semibold mb-4">Login</h2>
-        
-      <div class="text-left">
-          <label class="text-white text-sm" for="email">Email</label>
-          <input id="email" type="email" placeholder="email@exemplo.com" class="w-full p-2 mt-1 rounded-md bg-white text-gray-900 outline-none" />
-      </div>
+  <div class="p-6 sm:p-8 w-full max-w-xs sm:max-w-sm text-center">
+    <h2 class="text-white text-lg font-semibold mb-4">Login</h2>
 
-      <div class="text-left mt-4">
-          <label class="text-white text-sm" for="password">Senha</label>
-          <input id="password" type="password" placeholder="senha:" class="w-full p-2 mt-1 rounded-md bg-white text-gray-900 outline-none" />
-      </div>
-        
-      <div class="flex items-center mt-4" onClick="toggleCheckbox()">
-          <input id="remember" type="checkbox" class="hidden">
-          <label for="remember" class="w-10 h-5 flex items-center bg-gray-600 rounded-full p-1 cursor-pointer" onclick="toggleCheckbox()">
-              <div id="check" class="w-4 h-4 bg-red-400 rounded-full transition-transform transform translate-x-0"></div>
-          </label>
-          <span class="text-green-300 text-sm ml-2">Manter o login salvo neste dispositivo.</span>
-      </div>
-
-
-        <a href="./menu.html" class="bg-white text-black font-semibold px-4 py-2 mt-4 rounded-lg shadow-md w-full block text-center">Entrar</a>
- 
-        <a href="#" class="text-sm text-green-300 block mt-2">Recuperar senha</a>
-          
-        <a href="./cadastro.html" class="text-sm text-green-300 block mt-2">Criar nova conta</a>
-
-
+    <div class="text-left">
+      <label class="text-white text-sm" for="email">Email</label>
+      <input id="email" type="email" placeholder="email@exemplo.com"
+        class="w-full p-2 mt-1 rounded-md bg-white text-gray-900 outline-none" />
     </div>
+
+    <div class="text-left mt-4">
+      <label class="text-white text-sm" for="password">Senha</label>
+      <input id="password" type="password" placeholder="senha:"
+        class="w-full p-2 mt-1 rounded-md bg-white text-gray-900 outline-none" />
+    </div>
+
+    <div class="flex items-center mt-4" onClick="toggleCheckbox()">
+      <input id="remember" type="checkbox" class="hidden">
+      <label for="remember" class="w-10 h-5 flex items-center bg-gray-600 rounded-full p-1 cursor-pointer"
+        onclick="toggleCheckbox()">
+        <div id="check" class="w-4 h-4 bg-red-400 rounded-full transition-transform transform translate-x-0"></div>
+      </label>
+      <span class="text-green-300 text-sm ml-2">Manter o login salvo neste dispositivo.</span>
+    </div>
+
+
+    <a href="./menu.html"
+      class="bg-white text-black font-semibold px-4 py-2 mt-4 rounded-lg shadow-md w-full block text-center">Entrar</a>
+
+    <a href="#" class="text-sm text-green-300 block mt-2">Recuperar senha</a>
+
+    <a href="./cadastro.html" class="text-sm text-green-300 block mt-2">Criar nova conta</a>
+
+
+  </div>
 </body>
+
 </html>

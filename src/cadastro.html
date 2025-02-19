@@ -1,51 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
-    <link href="./output.css" rel="stylesheet">
-    <script>
-      function toggleCheckbox() {
-        const toggle = document.getElementById('check');
-        toggle.classList.toggle('bg-green-400');
-        toggle.classList.toggle('bg-red-400');
-        toggle.classList.toggle('translate-x-5');
-      }
-    </script>
-  </head>
 
-  <body class="flex justify-center min-h-screen bg-gradient-to-b from-blue-900 to-blue-400 px-4 relative overflow-hidden mt-30">
-    <!-- SOBRE A TELA DE CADASTRO:
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro</title>
+  <link href="./output.css" rel="stylesheet">
+  <script>
+    function toggleCheckbox() {
+      const toggle = document.getElementById('check');
+      toggle.classList.toggle('bg-green-400');
+      toggle.classList.toggle('bg-red-400');
+      toggle.classList.toggle('translate-x-5');
+    }
+  </script>
+</head>
+
+<body
+  class="flex justify-center min-h-screen bg-gradient-to-b from-blue-900 to-blue-400 px-4 relative overflow-hidden mt-30">
+  <!-- Sobre a tela de cadastro:
           Nessa tela, assim como a de login, foi baseada também na Heurística de Nielsen, sendo uma tela da cadastro padrão, para que o usuário não apresente dificuldades em usar o sistema.
     -->
 
-    <div class="p-6 sm:p-8 w-full max-w-xs sm:max-w-sm text-center">
-      <h2 class="text-white text-lg font-semibold mb-4">Cadastro de Usuário</h2>
-        
-      <div class="text-left">
-        <label class="text-white text-sm" for="nome">Nome</label>
-        <input id="nome" type="text" placeholder="Nome" class="w-full p-2 mt-1 rounded-md bg-white text-gray-900 outline-none">
-      </div>
+  <div class="p-6 sm:p-8 w-full max-w-xs sm:max-w-sm text-center">
+    <h2 class="text-white text-lg font-semibold mb-4">Cadastro de Usuário</h2>
 
-      <div class="text-left mt-4">
-        <label class="text-white text-sm" for="email">E-mail</label>
-        <input id="email" type="email" placeholder="email@exemplo.com" class="w-full p-2 mt-1 rounded-md bg-white text-gray-900 outline-none">
-      </div>
-        
-      <div class="text-left mt-4">
-        <label class="text-white text-sm" for="senha">Senha</label>
-        <input id="senha" type="password" placeholder="senha" class="w-full p-2 mt-1 rounded-md bg-white text-gray-900 outline-none">
-      </div>
-
-
-      <div class="text-left mt-4">
-        <label class="text-white text-sm" for="confirmacao">Confirme sua senha</label>
-        <input id="confirmacao" type="password" placeholder="Confirme sua senha" class="w-full p-2 mt-1 rounded-md bg-white text-gray-900 outline-none">
-      </div>
-        
-      <a href="./index.html" class="bg-white text-black font-semibold px-4 py-2 mt-4 rounded-lg shadow-md w-full block text-center">Confirmar</a>
+    <div class="text-left">
+      <label class="text-white text-sm" for="nome">Nome</label>
+      <input id="nome" type="text" placeholder="Nome"
+        class="w-full p-2 mt-1 rounded-md bg-white text-gray-900 outline-none">
     </div>
-  </body>
-</html>
 
+    <div class="text-left mt-4">
+      <label class="text-white text-sm" for="email">E-mail</label>
+      <input id="email" type="email" placeholder="email@exemplo.com"
+        class="w-full p-2 mt-1 rounded-md bg-white text-gray-900 outline-none">
+    </div>
+
+    <div class="text-left mt-4">
+      <label class="text-white text-sm" for="senha">Senha</label>
+      <input id="senha" type="password" placeholder="senha"
+        class="w-full p-2 mt-1 rounded-md bg-white text-gray-900 outline-none">
+    </div>
+
+
+    <div class="text-left mt-4">
+      <label class="text-white text-sm" for="confirmacao">Confirme sua senha</label>
+      <input id="confirmacao" type="password" placeholder="Confirme sua senha"
+        class="w-full p-2 mt-1 rounded-md bg-white text-gray-900 outline-none">
+    </div>
+
+    <a href="./index.html"
+      class="bg-white text-black font-semibold px-4 py-2 mt-4 rounded-lg shadow-md w-full block text-center">Confirmar</a>
+  </div>
+</body>
+
+</html>

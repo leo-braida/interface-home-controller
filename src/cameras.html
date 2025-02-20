@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Câmeras</title>
+  <link href="./output.css" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="grid min-h-screen bg-gradient-to-b from-blue-500 to-blue-700 px-4 relative overflow-hidden">
+  <!-- Sobre a tela de câmeras:
+      Nessa tela, além do já dito na tela de cadastro (sobre o sistema em geral), ela é uma tela simples com acesso a todas as câmeras registradas, permitindo vê-las de forma rápida. 
+      O usuário pode clicar em uma câmera para ver sua imagem maior e suas configurações (tela não implementada) ou clicar no mais para adicionar uma nova câmera. 
+      Além disso, também possui um ícone de estrela (para favoritar) e uma lata de lixo (para excluir). Esses ícones foram escolhidos por serem amplamente utilizados, facilitando a compreensão para os usuários.
+    -->
+  <nav
+    class="bg-gradient-to-b from-blue-900 to-blue-700 p-4 flex justify-between text-white fixed top-0 left-0 w-full z-100 rounded-b-3xl">
+    <div class="flex gap-3">
+
+      <i data-lucide="arrow-left" class="w-6 h-6" onclick="back()"></i>
+      <a href="#"><i data-lucide="user" class="w-6 h-6"></i></a>
+      <a href="./configuracoes.html"><i data-lucide="settings" class="w-6 h-6"></i></a>
+      <a href="./menu.html"><i data-lucide="home" class="w-6 h-6"></i></a>
+
+    </div>
+
+    <div class="flex gap-3">
+      <span id="clock" class="text-lg font-semibold"></span>
+      <i data-lucide="bell" class="w-6 h-6"></i>
+      <i data-lucide="battery-full" class="w-6 h-6 text-green-400"></i>
+    </div>
+  </nav>
+
+
+  <div class="content-evenly justify-self-center w-100/100 grid grid-cols-2 md:grid-cols-3 mt-20">
+    <label class="col-span-2 md:col-span-3 place-self-center text-white text-lg font-semibold ">Câmeras</label>
+    <div
+      class="place-self-center justify-between content-between grid grid-cols-3 grid-rows-3 shadow-xl rounded-xl size-4/8 w-6/7 bg-gradient-to-b from-blue-500 to-blue-900">
+      <label class="col-start-1 row-start-1 text-white -mt-7 absolute">Câmera 1</label>
+      <div class="p-2 col-start-1 row-start-1"><i data-lucide="star" class="text-white active:opacity-50"
+          onclick="favorite(this)"></i>
+      </div>
+      <div class="col-start-2 row-start-2"><i data-lucide="video-off" class="size-20 place-self-center -mt-5 mb-2"></i>
+      </div>
+      <div class="p-2 col-start-3 row-start-3 grid"><i data-lucide="trash" class="text-white place-self-end"></i>
+      </div>
+    </div>
+    <div
+      class="place-self-center justify-between content-between grid grid-cols-3 grid-rows-3 shadow-xl rounded-xl size-4/8 w-6/7 bg-gradient-to-b from-blue-500 to-blue-900">
+      <label class="col-start-1 row-start-1 text-white -mt-7 absolute">Câmera 2</label>
+      <div class="p-2 col-start-1 row-start-1"><i data-lucide="star" class="absolute text-white active:opacity-50"
+          onclick="favorite(this)"></i></div>
+      <div class="col-start-2 row-start-2"><i data-lucide="video-off" class="size-20 place-self-center -mt-5 mb-2"></i>
+      </div>
+      <div class="p-2 col-start-3 row-start-3 grid"><i data-lucide="trash" class="text-white place-self-end"></i>
+      </div>
+    </div>
+    <div
+      class="place-self-center justify-between content-between grid grid-cols-3 grid-rows-3 shadow-xl rounded-xl size-4/8 w-6/7 bg-gradient-to-b from-blue-500 to-blue-900">
+      <label class="col-start-1 row-start-1 text-white -mt-7 absolute">Câmera 3</label>
+      <div class="p-2 col-start-1 row-start-1"><i data-lucide="star" class="text-white active:opacity-50"
+          onclick="favorite(this)"></i></div>
+      <div class="col-start-2 row-start-2"><i data-lucide="video-off" class="size-20 place-self-center -mt-5 mb-2"></i>
+      </div>
+      <div class="p-2 col-start-3 row-start-3 grid"><i data-lucide="trash" class="text-white place-self-end"></i>
+      </div>
+    </div>
+    <div
+      class="place-self-center justify-between content-between grid grid-cols-3 grid-rows-3 shadow-xl rounded-xl size-4/8 w-6/7 bg-gradient-to-b from-blue-500 to-blue-900">
+      <label class="col-start-1 row-start-1 text-white -mt-7 absolute">Câmera 4</label>
+      <div class="p-2 col-start-1 row-start-1"><i data-lucide="star" class="text-white active:opacity-50"
+          onclick="favorite(this)"></i></div>
+      <div class="col-start-2 row-start-2"><i data-lucide="video-off" class="size-20 place-self-center -mt-5 mb-2"></i>
+      </div>
+      <div class="p-2 col-start-3 row-start-3 grid"><i data-lucide="trash" class="text-white place-self-end"></i>
+      </div>
+    </div>
+    <div
+      class="place-self-center justify-between content-between grid grid-cols-3 grid-rows-3 shadow-xl rounded-xl size-4/8 w-6/7 bg-gradient-to-b from-blue-500 to-blue-900">
+      <label class="col-start-1 row-start-1 text-white -mt-7 absolute">Câmera 5</label>
+      <div class="p-2 col-start-1 row-start-1"><i data-lucide="star" class="text-white active:opacity-50"
+          onclick="favorite(this)"></i></div>
+      <div class="col-start-2 row-start-2"><i data-lucide="video-off" class="size-20 place-self-center -mt-5 mb-2"></i>
+      </div>
+      <div class="p-2 col-start-3 row-start-3 grid"><i data-lucide="trash" class="text-white place-self-end"></i>
+      </div>
+    </div>
+    <div
+      class="size-20 justify-items-center place-self-center shadow-xl rounded-full bg-gradient-to-b from-blue-500 to-blue-900">
+      <i data-lucide="plus" class="size-10 text-white place-self-center mt-5 mb-5"></i>
+      <label for="adicionar" class="text-white">Adicionar</label>
+    </div>
+  </div>
+  <script>
+    function toggleCheckbox(element) {
+      const toggle = element.querySelector('.toggle');
+      if (toggle.classList.contains('bg-red-400')) {
+        toggle.classList.replace('bg-red-400', 'bg-green-400');
+      } else {
+        toggle.classList.replace('bg-green-400', 'bg-red-400');
+      }
+      toggle.classList.toggle('translate-x-5');
+    }
+
+    function updateTime() {
+      const date = new Date();
+      document.getElementById("clock").innerText = `${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`;
+    }
+    updateTime();
+    setInterval(updateTime, 1000)
+    lucide.createIcons();
+
+    function back() {
+      history.back();
+    }
+
+    function favorite(element) {
+      if (element.classList.contains("fill-white")) {
+        element.classList.remove("fill-white");
+      } else {
+        element.classList.add("fill-white");
+      }
+    }   
+  </script>
+</body>
+
+</html>

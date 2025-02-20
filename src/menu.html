@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Principal</title>
+  <link href="./output.css" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-b from-blue-500 to-blue-700 px-4">
+  <!-- 
+    Sobre a tela de menu:
+      Essa é a tela principal onde o usuário consegue acessar as demais partes do sistema.
+
+      O menu possui uma barra de busca, que visa facilitar o usuário a navegar pelo aplicativo, aumentando sua flexibilidade, permitindo que o usuário realize uma tarefa por mais de um caminho.
+      Além disso, essa barra de busca também possui um microfone para auxiliar na acessibilidade, permitindo a busca por voz.
+
+      O menu principal segue o padrão de ícones grandes utilizados ao longo de quase todo o projeto. Dessa forma, facilita para o usuário enxergar o que precisa. Também foram utilizados desenhos que remetem ao mundo real, para que o usuário entenda o que está mexendo, sem que a tela fique com muito texto.
+      Ademais, o menu consta com o ar condicionado e lâmpada para fácil acesso (podendo ser alterado para preferência do usuário). Ao lado, quatro aplicativos favoritados pelo usuário, caso ele não tenha quatro aplicativos favoritados, ocuparão os espaços restantes os últimos aplicativos que ele acessou.
+      Vale ressaltar também que o usuário poderia clicar no quadrado de dispositivos (mas fora de um dispositivo em específico) para ir para a tela com todos dispositivos. Esta funcionalidade também serviria para a parte do ar-condicinado, lâmpada, cômodos, câmeras e aplicativos, mas as telas não foram implementadas.  
+
+      Na aba geral, possuímos algumas informações editáveis. Neste exemplo deixamos o dia, horário, temperatura, e o clima do dia, e dos próximos dois dias. Porém a ideia dessa área é ser editável para o que o usuário prefere ver. Dessa forma, ele não precisa abrir o aplicativo sempre que quiser essa informação.
+
+      Na seção de cômodos, seguimos novamente a ideia dos 4 cômodos favoritados, com os espaços restantes preenchidos pelos últimos acessados. 
+      É possível acessar todos os cômodos clicando dentro da caixa mas fora de uma caixa de cômodo específico (essa tela não foi implementada).
+
+      Na seção de câmeras, seguimos a mesma ideia dos cômodos, inclusive sendo possível ver todas as câmeras da mesma forma.
+    
+      Por último, a parte de aplicativos. Aqui, é mostrado parte dos aplicativos dos usuários, sendo possível adicionar mais aplicativos nessa parte. Porém, se quiser acessar os outros aplicativos, também seria possível clicar na caixa de aplicativos.
+  -->
+
+  <nav
+    class="bg-gradient-to-b from-blue-900 to-blue-700 p-4 flex justify-between text-white fixed top-0 left-0 w-full z-100 rounded-b-3xl">
+    <div class="flex gap-3">
+      <i data-lucide="arrow-left" class="w-6 h-6" onclick="back()"></i>
+      <a href="#"><i data-lucide="user" class="w-6 h-6"></i></a>
+      <a href="./configuracoes.html"><i data-lucide="settings" class="w-6 h-6"></i></a>
+      <a href="./menu.html"><i data-lucide="home" class="w-6 h-6"></i></a>
+    </div>
+
+    <div class="flex gap-3">
+      <span id="clock" class="text-lg font-semibold"></span>
+      <i data-lucide="bell" class="w-6 h-6"></i>
+      <i data-lucide="battery-full" class="w-6 h-6 text-green-400"></i>
+    </div>
+  </nav>
+
+
+  <div class="flex items-center flex-grow mt-16">
+    <input id="pesquisar" type="text" placeholder="Pesquisar:"
+      class="w-full p-2 mt-1 bg-white text-grey outline-none rounded-3xl">
+    <button class="cursor-pointer mx-4">
+      <i data-lucide="mic" class="text-white"></i>
+    </button>
+  </div>
+
+  <label class="mt-4 text-white text-lg font-semibold block">Menu principal</label>
+  <div
+    class="bg-gradient-to-b from-blue-900 to-blue-700 p-4 rounded-3xl shadow-lg text-white w-full relative flex flex-row items-start gap-4 mb-2">
+    <div class="flex flex-col w-1/2">
+      <div
+        class="bg-gradient-to-b from-blue-500 to-blue-900 p-6 rounded-2xl shadow-lg flex-1 flex flex-col justify-between  mb-2">
+        <div class="flex justify-between items-center mb-2">
+          <i data-lucide="air-vent" class="size-10"></i>
+          <div class="mt-2 p-2 rounded-lg flex justify-between items-center cursor-pointer"
+            onclick="toggleCheckbox(this)">
+            <div
+              class="switch w-12 h-6 flex items-center bg-blue-700 rounded-full p-1 relative border-2 border-blue-900">
+              <div
+                class="toggle w-5 h-5 bg-red-400 border-2 border-blue-900 rounded-full transition-transform transform absolute left-1">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center gap-x-2 items-center text-2xl">
+          <button class="bg-gradient-to-b from-blue-800 to-blue-600 p-2 rounded-full"><i
+              data-lucide="minus"></i></button>
+          <span>26°C</span>
+          <button class="bg-gradient-to-b from-blue-800 to-blue-600 p-2 rounded-full"><i
+              data-lucide="plus"></i></button>
+        </div>
+      </div>
+
+      <div
+        class="bg-gradient-to-b from-blue-500 to-blue-900 p-4 rounded-2xl shadow-lg  flex justify-between items-center size-20 h-full w-full mt-4">
+        <i data-lucide="lightbulb" class="size-10"></i>
+        <div class="mt-2 p-2 rounded-lg flex justify-between items-center cursor-pointer"
+          onclick="toggleCheckbox(this)">
+          <div class="switch w-12 h-6 flex items-center bg-blue-700 rounded-full p-1 relative border-2 border-blue-900">
+            <div
+              class="toggle w-5 h-5 bg-red-400 border-2 border-blue-900 rounded-full transition-transform transform absolute left-1">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-1/2">
+      <div
+        class="bg-gradient-to-b from-blue-500 to-blue-900 rounded-2xl shadow-lg p-2 w-full flex flex-col items-center"
+        onclick="trocaTela('dispositivos')">
+        <h3 class="text-lg font-semibold mb-4 text-center">Dispositivos</h3>
+        <div class="grid grid-cols-2 gap-3 w-full">
+          <div class="bg-gradient-to-b from-blue-800 to-blue-600 p-4 rounded-xl flex items-center">
+            <i data-lucide="lightbulb" class="size-10"></i>
+          </div>
+          <div class="bg-gradient-to-b from-blue-800 to-blue-600 p-4 rounded-xl flex items-center">
+            <i data-lucide="bell" class="size-10"></i>
+          </div>
+          <div class="bg-gradient-to-b from-blue-800 to-blue-600 p-4 rounded-xl flex items-center">
+            <i data-lucide="air-vent" class="size-10"></i>
+          </div>
+          <div class="bg-gradient-to-b from-blue-800 to-blue-600 p-4 rounded-xl flex items-center">
+            <i data-lucide="tv" class="size-10"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <label class="text-white text-lg font-semibold block">Geral</label>
+  <div
+    class="grid grid-cols-3 gap-4 bg-gradient-to-b from-blue-900 to-blue-700 p-4 rounded-3xl text-white shadow-xl w-full mb-2">
+    <div>
+      <div class="flex justify-center items-center bg-gradient-to-b from-blue-500 to-blue-900 rounded-3xl shadow-xl">
+        <i data-lucide="calendar" class="size-10"></i>
+      </div>
+      <p class="text-center">27/03/2045</p>
+    </div>
+
+    <div>
+      <div class="flex justify-center items-center bg-gradient-to-b from-blue-500 to-blue-900 rounded-3xl shadow-xl">
+        <i data-lucide="clock-4" class="size-10"></i>
+      </div>
+      <p class="text-center">09:30</p>
+    </div>
+
+    <div>
+      <div class="flex justify-center items-center bg-gradient-to-b from-blue-500 to-blue-900 rounded-3xl shadow-xl">
+        <i data-lucide="thermometer" class="size-10"></i>
+      </div>
+      <p class="text-center">37º C</p>
+    </div>
+
+    <div>
+      <p class="text-lg">Hoje</p>
+      <div class="flex justify-center items-center bg-gradient-to-b from-blue-500 to-blue-900 rounded-3xl shadow-xl">
+        <i data-lucide="sun" class="size-10"></i>
+      </div>
+      <p class="text-center">Ensolarado</p>
+    </div>
+
+    <div>
+      <p class="text-lg">Amanhã</p>
+      <div class="flex justify-center items-center bg-gradient-to-b from-blue-500 to-blue-900 rounded-3xl shadow-xl">
+        <i data-lucide="cloud-sun-rain" class="size-10"></i>
+      </div>
+      <p class="text-center">Nublado</p>
+    </div>
+
+    <div>
+      <p class="text-lg">Sábado</p>
+      <div class="flex justify-center items-center bg-gradient-to-b from-blue-500 to-blue-900 rounded-3xl shadow-xl">
+        <i data-lucide="cloud-rain-wind" class="size-10"></i>
+      </div>
+      <p class="text-center">Chuva</p>
+    </div>
+
+  </div>
+
+  <div class="w-full flex items-center flex-grow grid grid-cols-2 gap-4 mb-2 justify-center">
+    <div class="w-full">
+      <label class="text-white text-lg font-semibold block">Cômodos</label>
+      <div
+        class="w-full grid grid-cols-2 grid-rows-2 place-items-center bg-gradient-to-b from-blue-900 to-blue-700 p-2 rounded-3xl shadow-md  text-white shadow-xl size-70 gap-2 ">
+        <div class="text-center text-lg">
+          <p>Quarto 1</p>
+          <div
+            class="flex justify-center bg-gradient-to-b from-blue-500 to-blue-900 rounded-3xl shadow-xl items-center p-4">
+            <i data-lucide="bed-double" class="size-10"></i>
+          </div>
+        </div>
+
+        <div class="text-center text-lg">
+          <p>Sala</p>
+          <div
+            class="flex justify-center bg-gradient-to-b from-blue-500 to-blue-900 rounded-3xl shadow-xl items-center p-4">
+            <i data-lucide="sofa" class="size-10"></i>
+          </div>
+        </div>
+
+        <div class="text-center text-lg">
+          <p>Banheiro</p>
+          <div
+            class="flex justify-center bg-gradient-to-b from-blue-500 to-blue-900 rounded-3xl shadow-xl items-center p-4">
+            <i data-lucide="bath" class="size-10"></i>
+          </div>
+        </div>
+
+        <div class="text-center text-lg">
+          <p>Quarto 2</p>
+          <div
+            class="flex justify-center bg-gradient-to-b from-blue-500 to-blue-900 rounded-3xl shadow-xl items-center p-4">
+            <i data-lucide="bed" class="size-10"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full">
+      <label class="text-white text-lg font-semibold block">Câmeras</label>
+      <div
+        class="w-full grid grid-cols-2 grid-rows-2 place-items-center bg-gradient-to-b from-blue-900 to-blue-700 p-2 rounded-3xl shadow-md  text-white shadow-xl size-70 gap-2"
+        onclick="trocaTela('cameras')">
+        <div class="text-center text-lg">
+          <p>Portão 1</p>
+          <div
+            class="flex justify-center bg-gradient-to-b from-blue-500 to-blue-900 rounded-3xl shadow-xl items-center p-4">
+            <i data-lucide="video" class="size-10"></i>
+          </div>
+        </div>
+
+        <div class="text-center text-lg">
+          <p>Jardim</p>
+          <div
+            class="flex justify-center bg-gradient-to-b from-blue-500 to-blue-900 rounded-3xl shadow-xl items-center p-4">
+            <i data-lucide="video" class="size-10"></i>
+          </div>
+        </div>
+
+        <div class="text-center text-lg">
+          <p>Portão 2</p>
+          <div
+            class="flex justify-center bg-gradient-to-b from-blue-500 to-blue-900 rounded-3xl shadow-xl items-center p-4">
+            <i data-lucide="video" class="size-10"></i>
+          </div>
+        </div>
+
+        <div class="text-center text-lg">
+          <p>Fundos</p>
+          <div
+            class="flex justify-center bg-gradient-to-b from-blue-500 to-blue-900 rounded-3xl shadow-xl items-center p-4">
+            <i data-lucide="video" class="size-10"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <label class="text-white text-lg font-semibold block">Aplicativos</label>
+
+  <div
+    class="grid grid-cols-3 content-center gap-4 bg-gradient-to-b from-blue-900 to-blue-700 p-4 rounded-3xl shadow-md text-white shadow-xl w-full mb-2">
+    <div>
+      <p class="text-lg">Calendário</p>
+      <div
+        class="flex justify-center items-center bg-gradient-to-b from-blue-500 to-blue-900 rounded-3xl shadow-xl size-20">
+        <i data-lucide="calendar" class="size-10"></i>
+      </div>
+    </div>
+
+    <div>
+      <p class="text-lg">Relógio</p>
+      <div
+        class="flex justify-center items-center bg-gradient-to-b from-blue-500 to-blue-900 rounded-3xl shadow-xl size-20">
+        <i data-lucide="clock-4" class="size-10"></i>
+      </div>
+    </div>
+
+    <div>
+      <p class="text-lg">Termômetro</p>
+      <div
+        class="flex justify-center items-center bg-gradient-to-b from-blue-500 to-blue-900 rounded-3xl shadow-xl size-20">
+        <i data-lucide="thermometer" class="size-10"></i>
+      </div>
+    </div>
+
+    <div>
+      <p class="text-lg">Clima</p>
+      <div
+        class="flex justify-center items-center bg-gradient-to-b from-blue-500 to-blue-900 rounded-3xl shadow-xl size-20">
+        <i data-lucide="sun" class="size-10"></i>
+      </div>
+    </div>
+
+    <div>
+      <p class="text-lg">Alarme</p>
+      <div
+        class="flex justify-center items-center bg-gradient-to-b from-blue-500 to-blue-900 rounded-3xl shadow-xl size-20">
+        <i data-lucide="alarm-clock" class="size-10"></i>
+      </div>
+    </div>
+
+    <div>
+      <p class="text-lg">Adicionar</p>
+      <div
+        class="flex justify-center items-center bg-gradient-to-b from-blue-500 to-blue-900 rounded-3xl shadow-xl size-20">
+        <i data-lucide="plus" class="size-10"></i>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function trocaTela(tela) {
+      window.location.href = tela + ".html";
+    }
+
+    function toggleCheckbox(element) {
+      const toggle = element.querySelector('.toggle');
+      if (toggle.classList.contains('bg-red-400')) {
+        toggle.classList.replace('bg-red-400', 'bg-green-400');
+      } else {
+        toggle.classList.replace('bg-green-400', 'bg-red-400');
+      }
+      toggle.classList.toggle('translate-x-5');
+    }
+
+    function updateTime() {
+      const date = new Date();
+      document.getElementById("clock").innerText = `${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`;
+    }
+    updateTime();
+    setInterval(updateTime, 1000)
+    lucide.createIcons();
+
+    function back() {
+      history.back();
+    }
+  </script>
+
+</body>
+
+</html>
+
+</html>
+
+</html>
